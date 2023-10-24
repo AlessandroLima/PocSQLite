@@ -105,5 +105,27 @@ class Pessoa: SQLiteBaseModel {
         return people
     }
     
+    func deleteRowsInBatch(ids: [Int]) -> Bool {
+        var db: OpaquePointer? = nil
+
+        if sqlite3_open(self.manager?.databasePath, &super.db) != SQLITE_OK {
+            print("Erro ao abrir o banco de dados.")
+            return false
+        }
+
+        let tableName = "pessoa"
+        let deleteStatementString = "DELETE FROM \(tableName) WHERE id IN (\(ids.map { String($0) }.joined(separator: ",")))"
+
+        var deleteStatement: OpaquePointer? = nil
+
+        if sqlite3_exec(super.db, deleteStatementString, nil, nil, nil) != SQLITE_OK {
+            print("Erro ao executar a instrução de exclusão em lote.")
+            return false
+        }
+
+        sqlite3_close(db)
+
+        return true
+    }
     
 }

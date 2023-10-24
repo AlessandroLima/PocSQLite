@@ -44,9 +44,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Pessoa(nome: "Ale", idade: 50),
                 Pessoa(nome: "Mi", idade: 39),
                 Pessoa(nome: "Pedro", idade: 0),
+                Pessoa(nome: "Alice2", idade: 4),
+                Pessoa(nome: "Ale2", idade: 50),
+                Pessoa(nome: "Mi2", idade: 39),
+                Pessoa(nome: "Pedro2", idade: 0),
             ]
             
-            _ = person.insertPeopleInBatch(people: peopleToInsert)
+            //_ = person.insertPeopleInBatch(people: peopleToInsert)
+            
+            _ = person.deleteRowsInBatch(ids: [1,2,3,4])
             
             let persons = person.selectTopNPeople(limit: 10)
             
@@ -56,10 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-    }
-    
-    private func insertPeople() {
-        
     }
 
     // MARK: UISceneSession Lifecycle
