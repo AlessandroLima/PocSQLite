@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Pessoa(nome: "Pedro2", idade: 0),
             ]
             
-            //_ = person.insertPeopleInBatch(people: peopleToInsert)
+            _ = person.insertPeopleInBatch(people: peopleToInsert)
             
             _ = person.deleteRowsInBatch(ids: [1,2,3,4])
             

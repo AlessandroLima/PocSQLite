@@ -20,6 +20,7 @@
 		D2F5BD1E2AE6BF8F0040BA1E /* SQLiteBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5BD1C2AE6BF8F0040BA1E /* SQLiteBaseModel.swift */; };
 		D2F5BD212AE6BFD60040BA1E /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5BD1F2AE6BFD60040BA1E /* SQLiteManager.swift */; };
 		D2F5BD222AE6BFD60040BA1E /* SQLiteManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5BD202AE6BFD60040BA1E /* SQLiteManagerType.swift */; };
+		D2F5BD242AEC23F00040BA1E /* SQLiteBaseModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5BD232AEC23F00040BA1E /* SQLiteBaseModelType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D2F5BD1C2AE6BF8F0040BA1E /* SQLiteBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteBaseModel.swift; sourceTree = "<group>"; };
 		D2F5BD1F2AE6BFD60040BA1E /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 		D2F5BD202AE6BFD60040BA1E /* SQLiteManagerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManagerType.swift; sourceTree = "<group>"; };
+		D2F5BD232AEC23F00040BA1E /* SQLiteBaseModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteBaseModelType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +109,9 @@
 		D20B9A9A2AE6BEB500ADAAFD /* PocSQLite */ = {
 			isa = PBXGroup;
 			children = (
+				D2F5BD252AEC24960040BA1E /* Model */,
 				D2F5BD1F2AE6BFD60040BA1E /* SQLiteManager.swift */,
 				D2F5BD202AE6BFD60040BA1E /* SQLiteManagerType.swift */,
-				D2F5BD1B2AE6BF8F0040BA1E /* Pessoa.swift */,
-				D2F5BD1C2AE6BF8F0040BA1E /* SQLiteBaseModel.swift */,
 				D20B9A9B2AE6BEB500ADAAFD /* AppDelegate.swift */,
 				D20B9A9D2AE6BEB500ADAAFD /* SceneDelegate.swift */,
 				D20B9A9F2AE6BEB500ADAAFD /* ViewController.swift */,
@@ -137,6 +138,16 @@
 				D20B9ABE2AE6BEB700ADAAFD /* PocSQLiteUITestsLaunchTests.swift */,
 			);
 			path = PocSQLiteUITests;
+			sourceTree = "<group>";
+		};
+		D2F5BD252AEC24960040BA1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2F5BD232AEC23F00040BA1E /* SQLiteBaseModelType.swift */,
+				D2F5BD1C2AE6BF8F0040BA1E /* SQLiteBaseModel.swift */,
+				D2F5BD1B2AE6BF8F0040BA1E /* Pessoa.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F5BD242AEC23F00040BA1E /* SQLiteBaseModelType.swift in Sources */,
 				D2F5BD222AE6BFD60040BA1E /* SQLiteManagerType.swift in Sources */,
 				D20B9AA02AE6BEB500ADAAFD /* ViewController.swift in Sources */,
 				D20B9A9C2AE6BEB500ADAAFD /* AppDelegate.swift in Sources */,

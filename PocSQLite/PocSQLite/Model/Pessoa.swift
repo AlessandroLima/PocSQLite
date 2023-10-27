@@ -8,7 +8,7 @@
 import Foundation
 import SQLite3
 
-class Pessoa: SQLiteBaseModel {
+class Pessoa: SQLiteBaseModel, SQLiteBaseModelType {
     
     var id: Int
     var nome: String
@@ -84,7 +84,7 @@ class Pessoa: SQLiteBaseModel {
         let selectStatementString = "SELECT * FROM \("pessoa") ORDER BY id DESC LIMIT ?"
         var selectStatement: OpaquePointer? = nil
 
-        if sqlite3_prepare_v2(db, selectStatementString, -1, &selectStatement, nil) != SQLITE_OK {
+        if sqlite3_prepare_v2(super.db, selectStatementString, -1, &selectStatement, nil) != SQLITE_OK {
             print("Erro ao preparar a instrução de seleção.")
             return nil
         }
@@ -115,8 +115,6 @@ class Pessoa: SQLiteBaseModel {
 
         let tableName = "pessoa"
         let deleteStatementString = "DELETE FROM \(tableName) WHERE id IN (\(ids.map { String($0) }.joined(separator: ",")))"
-
-        var deleteStatement: OpaquePointer? = nil
 
         if sqlite3_exec(super.db, deleteStatementString, nil, nil, nil) != SQLITE_OK {
             print("Erro ao executar a instrução de exclusão em lote.")
